@@ -18,10 +18,8 @@ import {
 
 import {
   Colors,
-  DebugInstructions,
   Header,
   LearnMoreLinks,
-  ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
 type SectionProps = PropsWithChildren<{
@@ -89,18 +87,17 @@ function App(): React.JSX.Element {
             paddingHorizontal: safePadding,
             paddingBottom: safePadding,
           }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
+          <Section title="URL 1">
+            https://github.com
           </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
+          <Section title="URL 1 (Processed)">
+            {new URL('https://github.com').toString()}
           </Section>
-          <Section title="Debug">
-            <DebugInstructions />
+          <Section title="URL 2">
+             https://github.com?foo=bar
           </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
+          <Section title="URL 2 (Processed)">
+            {new URL('https://github.com?foo=bar').toString()}
           </Section>
           <LearnMoreLinks />
         </View>
